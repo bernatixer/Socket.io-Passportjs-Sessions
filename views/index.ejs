@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<body class="container">
+
+	<% if (logged) { %>
+    <%= username %>
+	<% } else { %>
+	<form action="/" method="post">
+		<div>
+			<label>Username:</label>
+			<input type="text" name="username"/>
+		</div>
+		<div>
+			<label>Password:</label>
+			<input type="password" name="password"/>
+		</div>
+		<div>
+			<input type="submit" value="Log In"/>
+		</div>
+	</form>
+	<% } %>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+	  var socket = io();
+	  socket.on('hello', function (data) {
+		console.log(data);
+		socket.emit('hello_back', 'Fine! What about you?');
+	  });
+	</script>
+</body>
+</html>
