@@ -1,2 +1,2 @@
 # Socket.io-Passportjs-Sessions
-Sample code on how to share passportjs sessions with socket.io
+Sample code showing how to share passportjs sessions with corresponding socket.io client
